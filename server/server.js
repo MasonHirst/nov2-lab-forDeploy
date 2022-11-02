@@ -7,9 +7,11 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const {home} = require('./controllers/pageCtrl.js')
+const {home, style, jScript} = require('./controllers/pageCtrl.js')
 
 app.get("/", home)
+app.get("/css", style)
+app.get("/js", jScript)
 
 
 const { PORT } = process.env
